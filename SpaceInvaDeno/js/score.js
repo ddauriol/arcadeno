@@ -9,7 +9,11 @@ function setFont() {
 }
 
 function setScore() {
-  text("SCORE: " + score + "   HS: " + scoreSH, width * 0.6, height * 0.05);
+  text(
+    "LEVEL: " + level + "    SCORE: " + score + "   HS: " + scoreSH,
+    width * 0.55,
+    height * 0.05
+  );
   if (lifes > -1) {
     image(lifeImgs[lifes], width * 0.93, height * 0.0);
   }

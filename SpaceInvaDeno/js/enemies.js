@@ -38,7 +38,7 @@ class Enemie {
   }
 
   moveY() {
-    this.y += 5;
+    this.y += yEnemyDown;
   }
 
   short() {}

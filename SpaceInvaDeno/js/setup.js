@@ -1,11 +1,13 @@
 // Global
-let scale = 0.75;
+let scale = 1;
 let fr = 30;
 let accelerationMove = 25;
 let accelerationShoot = 5;
 let accelerationShootEnemy = 12;
 let accelerationEnemyMax = 21;
 let accelerationEnemy;
+let yEnemyDown = 5;
+let upToLvel = 1.2;
 
 let deninho;
 let enemies = [];
@@ -45,12 +47,12 @@ function loadSetup() {
 
   // Carregamento das nuvens
   let rCloud = 80;
-  let xInitCloud = 200;
+  let xInitCloud = 275;
   let yInitCloud = height - 125;
   let nClouds = 4;
   for (i = 0; i < nClouds; i++) {
     let cloud = new Cloud(
-      xInitCloud + i * rCloud + xInit * i * 2,
+      xInitCloud + i * rCloud + xInit * i * 3,
       yInitCloud,
       rCloud
     );

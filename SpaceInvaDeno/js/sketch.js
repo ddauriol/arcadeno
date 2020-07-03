@@ -1,5 +1,6 @@
 let score = 0;
 let scoreSH = 0;
+let level = 1;
 let puaseGame = false;
 let lifes = 2;
 
@@ -41,11 +42,13 @@ function draw() {
   // Carregar background
   background(00);
 
+  // Config Socre
   setScore();
 
   // Set FrameRate
   frameRate(fr);
 
+  // Condição de PauseGame
   if (puaseGame == false) {
     // Carregar Deninho
     deninho.show();
@@ -55,13 +58,28 @@ function draw() {
       clouds[i].show();
     }
 
+    // Action Shoot
     denoShoot();
 
+    // Action Enemies
     enemiesActions();
   } else {
     text("Game Pausado", width * 0.4, height / 2);
   }
 
+  if (enemies.length <= 0) {
+    level = level + 1;
+    yEnemyDown = yEnemyDown * upToLvel;
+    bugShoots = [];
+    enemiesShoots = [];
+    clouds = [];
+    accelerationShootEnemy = accelerationShootEnemy * upToLvel;
+    accelerationEnemyMax = accelerationEnemyMax * upToLvel;
+    accelerationEnemy;
+    loadSetup();
+  }
+
+  // Game Over
   if (lifes < 0) {
     fill("rgba(255,255,0,1)");
     text("Game Over", width * 0.4, height / 2);
