@@ -14,13 +14,22 @@ function denoShoot() {
       if (bugShoots[i].hits(enemies[j])) {
         enemies[j].down();
         bugShoots[i].lost();
+        sndEnemiesKilled.play();
       }
     }
 
-    // Verifica se o tiro acertou um inimigo #TODO Ajusta posiçao.
+    // Verifica se o tiro acertou um Nuvem #TODO Ajusta posiçao.
     for (var k = 0; k < clouds.length; k++) {
       if (bugShoots[i].hits(clouds[k])) {
         bugShoots[i].lost();
+      }
+    }
+
+    // Verifica se o tiro acertou um node
+    for (var k = 0; k < nodeBoss.length; k++) {
+      if (bugShoots[i].hits(nodeBoss[k])) {
+        bugShoots[i].lost();
+        nodeBoss[k].down();
       }
     }
   }
@@ -69,6 +78,7 @@ function enemiesActions() {
     accelerationEnemy = accelerationEnemy * -1;
     for (var i = 0; i < enemies.length; i++) {
       enemies[i].moveY();
+      sndEnemiesMove.play();
     }
   }
 
@@ -107,6 +117,7 @@ function enemiesActions() {
         enemiesShoots[i].lost();
         deninho.setLife();
         lifes = lifes - 1;
+        sndDenoDeath.play();
       }
     }
   }
@@ -122,6 +133,25 @@ function enemiesActions() {
   for (var i = clouds.length - 1; i >= 0; i--) {
     if (clouds[i].toDelete == true) {
       clouds.splice(i, 1);
+    }
+  }
+}
+
+function bossActions() {
+  for (var i = 0; i < nodeBoss.length; i++) {
+    nodeBoss[i].show();
+    nodeBoss[i].move();
+    if (nodeBoss[i].x > width) {
+      nodeBoss[i].down();
+      sndNodeMove.stop();
+    }
+  }
+
+  // Remove nodeBoss
+  for (var i = nodeBoss.length - 1; i >= 0; i--) {
+    if (nodeBoss[i].toDelete == true) {
+      score = score + nodeBoss[i].points;
+      nodeBoss.splice(i, 1);
     }
   }
 }

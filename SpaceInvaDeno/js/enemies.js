@@ -40,6 +40,33 @@ class Enemie {
   moveY() {
     this.y += yEnemyDown;
   }
+}
 
-  short() {}
+class Boss {
+  constructor() {
+    this.r = 60;
+    this.x = -this.r;
+    this.y = 35;
+    this.toDelete = false;
+    this.points = 1000;
+  }
+
+  show() {
+    image(nodeImg, this.x, this.y, this.r, this.r);
+  }
+
+  down() {
+    this.toDelete = true;
+    scoreSH = scoreSH + 1;
+    if (lifes < 2) {
+      lifes = lifes + 1;
+    }
+  }
+
+  move() {
+    this.x += accelerationNode;
+    if (!sndNodeMove.isPlaying()) {
+      sndNodeMove.play();
+    }
+  }
 }

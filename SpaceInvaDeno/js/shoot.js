@@ -52,7 +52,7 @@ class EnemiesShoot {
 
   hits(obj) {
     var distance = dist(this.x, this.y, obj.x, obj.y);
-    if (distance < this.r + obj.r * 0.5) {
+    if (distance < this.r + obj.r * 0.35) {
       return true;
     } else {
       return false;

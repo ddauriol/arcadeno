@@ -1,11 +1,13 @@
 // Global
 let scale = 1;
-let fr = 30;
+let fr = 60;
+
 let accelerationMove = 25;
 let accelerationShoot = 5;
 let accelerationShootEnemy = 12;
 let accelerationEnemyMax = 21;
 let accelerationEnemy;
+let accelerationNode = 2;
 let yEnemyDown = 5;
 let upToLvel = 1.2;
 
@@ -25,7 +27,7 @@ function loadSetup() {
 
   // Criando o Enemies
   let xInit = 50;
-  let yInit = 55;
+  let yInit = 95;
   let rEnemy = 80;
   let EnemiesColumns = 5;
   let enemieTypes = ["", "rust", "rust", "octo"];
@@ -33,7 +35,7 @@ function loadSetup() {
   for (i = 0; i < enemieTypes.length; i++) {
     for (j = 0; j < EnemiesColumns; j++) {
       let enemie = new Enemie(
-        xInit + j * rEnemy + xInit * j,
+        xInit + j * rEnemy + xInit * j * 2,
         yInit,
         rEnemy,
         enemieTypes[i]

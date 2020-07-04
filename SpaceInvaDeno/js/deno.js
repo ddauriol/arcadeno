@@ -13,7 +13,13 @@ class Deninho {
   }
 
   move(dir) {
-    this.x += dir * this.accelerationMove;
+    if (this.x < 0) {
+      this.x = this.r;
+    } else if (this.x + this.r > width) {
+      this.x = width - this.r;
+    } else {
+      this.x += dir * this.accelerationMove;
+    }
   }
 
   setLife() {

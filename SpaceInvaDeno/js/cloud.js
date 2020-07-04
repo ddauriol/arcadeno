@@ -4,8 +4,8 @@ class Cloud {
     this.x = x;
     this.y = y;
     this.toDelete = false;
-    this.life = 4;
-    this.skins = ["snow", "storm", "rain", ""];
+    this.life = 8;
+    this.skins = ["snow", "snow", "storm", "storm", "rain", "rain", "", ""];
     this.cloudType = this.skins[this.life - 1];
   }
 
@@ -31,6 +31,4 @@ class Cloud {
       this.toDelete = true;
     }
   }
-
-  short() {}
 }

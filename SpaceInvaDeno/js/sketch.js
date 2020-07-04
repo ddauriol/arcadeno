@@ -7,6 +7,8 @@ let lifes = 2;
 let bugShoots = [];
 let enemiesShoots = [];
 
+let nodeBoss = [];
+
 function preload() {
   loadImagens();
   loadFonts();
@@ -14,6 +16,7 @@ function preload() {
 
 function setup() {
   loadSetup();
+  loadSounds();
 }
 
 function keyReleased() {
@@ -30,6 +33,7 @@ function keyPressed() {
   if (key == " ") {
     let bugShoot = new Shoot(deninho.x, deninho.y);
     bugShoots.push(bugShoot);
+    sndDenoShoot.play();
   }
   if (keyCode == RIGHT_ARROW) {
     deninho.move(1);
@@ -57,6 +61,16 @@ function draw() {
     for (var i = 0; i < clouds.length; i++) {
       clouds[i].show();
     }
+
+    // Node Show
+    if (nodeBoss.length <= 0) {
+      let nodeShow = random(1, 100);
+      if (nodeShow < 1.2) {
+        newNode = new Boss();
+        nodeBoss.push(newNode);
+      }
+    }
+    bossActions();
 
     // Action Shoot
     denoShoot();
