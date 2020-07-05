@@ -15,8 +15,23 @@ function preload() {
 }
 
 function setup() {
+  // Definições da tela
+  createCanvas(windowWidth, windowHeight);
+  fullscreen();
+
+  // Carregar background
+  background(00);
+
+  // Config Fonts
+  setFont();
+
+  // load SetUp
   loadSetup();
+
+  // load Sounds
   loadSounds();
+
+  // load Button
   loadButtons();
 }
 

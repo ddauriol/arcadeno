@@ -17,16 +17,6 @@ let enemies = [];
 let clouds = [];
 
 function loadSetup() {
-  // Definições da tela
-  createCanvas(windowWidth, windowHeight);
-  fullscreen();
-
-  // Carregar background
-  background(00);
-
-  // Config Fonts
-  setFont();
-
   // Criando o Deninho
   deninho = new Deninho();
 
