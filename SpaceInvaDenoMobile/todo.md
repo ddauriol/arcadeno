@@ -1,2 +1,0 @@
-- [ ]Arrumar a resolucao das meias
-- 
