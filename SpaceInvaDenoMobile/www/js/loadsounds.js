@@ -5,7 +5,7 @@ let sndEnemiesMove;
 let sndNodeMove;
 
 function loadSounds() {
-  soundFormats("wav", "mp3");
+  soundFormats("wav");
   sndDenoDeath = loadSound("./assets/sounds/explosion");
   sndDenoShoot = loadSound("./assets/sounds/shoot");
   sndEnemiesKilled = loadSound("./assets/sounds/invaderkilled");
