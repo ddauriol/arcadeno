@@ -18,12 +18,12 @@ function denoShoot() {
       }
     }
 
-    // Verifica se o tiro acertou um Nuvem #TODO Ajusta posiçao.
-    for (var k = 0; k < clouds.length; k++) {
-      if (bugShoots[i].hits(clouds[k])) {
-        bugShoots[i].lost();
-      }
-    }
+    // // Verifica se o tiro acertou um Nuvem #TODO Ajusta posiçao.
+    // for (var k = 0; k < clouds.length; k++) {
+    //   if (bugShoots[i].hits(clouds[k])) {
+    //     bugShoots[i].lost();
+    //   }
+    // }
 
     // Verifica se o tiro acertou um node
     for (var k = 0; k < nodeBoss.length; k++) {
